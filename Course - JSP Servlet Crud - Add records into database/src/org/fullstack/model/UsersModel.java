@@ -3,6 +3,7 @@ package org.fullstack.model;
 
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -43,6 +44,29 @@ public class UsersModel {
 				}
 				return listUsers;
 				
+	}
+
+	public boolean addUser(DataSource dataSource, User newUser) {
+		Connection connect = null;
+		PreparedStatement statement = null;
+		
+		try {
+			connect = dataSource.getConnection();
+			String username = newUser.getUsername();
+			String email = newUser.getEmail();
+			String query = "Insert into users(username,email) values (?,?)";
+			statement = connect.prepareStatement(query);
+			statement.setString(1, username);
+			statement.setString(2, email);
+			return statement.execute();
+		} catch (SQLException e) {
+		
+			e.printStackTrace();
+			return false;
+		}
+		
+		
+		
 	}
 
 }

@@ -50,12 +50,13 @@ if( request.getAttribute("title")==null){
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-        <a class="navbar-brand" href="${pageContext.request.contextPath}/home?page=home">SOLID.</a>
+        <a class="navbar-brand" href="${pageContext.request.contextPath}/site?page=home">SOLID.</a>
       </div>
       <div class="navbar-collapse collapse navbar-right">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="${pageContext.request.contextPath}/home?page=home">HOME</a></li>
-          <li><a href="${pageContext.request.contextPath}/home?page=listusers">LIST USERS</a></li>
+          <li class="active"><a href="${pageContext.request.contextPath}/site?page=home">HOME</a></li>
+          <li><a href="${pageContext.request.contextPath}/operation?page=listusers">LIST USERS</a></li>
+          <li><a href="${pageContext.request.contextPath}/operation?page=adduser">ADD USER</a></li>
           <li><a href="contact.html">CONTACT</a></li>    
         </ul>
       </div>
